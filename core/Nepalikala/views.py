@@ -11,3 +11,6 @@ def shop(request):
 
 def collection(request):
     return render(request, "products/collection.html")
+
+def about(request):
+    return render(request, "about/about.html")
