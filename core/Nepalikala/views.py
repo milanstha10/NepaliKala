@@ -4,7 +4,7 @@ def home(request):
     return render(request, "index.html")
 
 def contact(request):
-    return render(request, "contact.html") 
+    return render(request, "contact/contact.html") 
 
 def shop(request):
     return render(request, "products/shop.html")
