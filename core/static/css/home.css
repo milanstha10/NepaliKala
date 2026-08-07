@@ -144,34 +144,6 @@
   filter: drop-shadow(0 40px 80px rgba(0, 0, 0, .6));
 }
 
-.scroll-indicator {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  bottom: 35px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 12px;
-  z-index: 20;
-}
-
-.scroll-indicator span {
-  font-size: 13px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: #8b8b8b;
-}
-
-.scroll-line {
-  width: 2px;
-  height: 55px;
-  background: linear-gradient(to bottom,
-      var(--primary),
-      transparent);
-  animation: scrollDown 2s infinite;
-}
-
 @keyframes float {
 
   0% {

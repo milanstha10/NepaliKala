@@ -5,3 +5,6 @@ def home(request):
 
 def contact(request):
     return render(request, "contact.html") 
+
+def shop(request):
+    return render(request, "products/shop.html")
