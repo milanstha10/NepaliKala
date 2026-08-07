@@ -8,3 +8,6 @@ def contact(request):
 
 def shop(request):
     return render(request, "products/shop.html")
+
+def collection(request):
+    return render(request, "products/collection.html")
