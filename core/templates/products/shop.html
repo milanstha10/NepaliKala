@@ -1,173 +1,90 @@
-{% extends 'base.html' %}
-{% load static %}
-
-{% block title %}
-NepalKala | Shop
-{% endblock %}
-
-{% block content %}
+{% extends 'base.html' %} {% load static %} {% block title %} NepalKala | Shop
+{% endblock %} {% block content %}
 
 <section class="shop-hero">
+  <div class="shop-overlay"></div>
 
-    <div class="shop-overlay"></div>
+  <div class="container">
+    <div class="shop-heading">
+      <span class="shop-tag"> Authentic Nepali Collection </span>
 
-    <div class="container">
+      <h1>
+        Explore Our
+        <br />
+        Handmade Collection
+      </h1>
 
-        <div class="shop-heading">
-
-            <span class="shop-tag">
-                Authentic Nepali Collection
-            </span>
-
-            <h1>
-                Explore Our
-                <br>
-                Handmade Collection
-            </h1>
-
-            <p>
-                Every product is handcrafted by skilled Nepali artisans,
-                preserving centuries of tradition while supporting local
-                communities.
-            </p>
-
-        </div>
-
+      <p>
+        Every product is handcrafted by skilled Nepali artisans, preserving
+        centuries of tradition while supporting local communities.
+      </p>
     </div>
-
+  </div>
 </section>
 
+<section class="shop-products">
+  <div class="container">
+    <div class="product-grid">
+      {% for product in products %}
 
-<section class="shop-section">
+      <div class="product-card">
+        <div class="product-image">
+          {% if product.image %}
 
-    <div class="container">
+          <img src="{{ product.image.url }}" alt="{{ product.name }}" />
 
-        <div class="product-grid">
+          {% else %}
 
-            <div class="product-card">
+          <img
+            src="{% static 'images/products/product-placeholder.jpg' %}"
+            alt="{{ product.name }}"
+          />
 
-                <div class="product-image">
-
-                    <img src="{% static 'images/products/product1.jpg' %}" alt="Product">
-
-                </div>
-
-                <div class="product-info">
-
-                    <span class="category">
-                        Wood Craft
-                    </span>
-
-                    <h3>Hand Carved Buddha Statue</h3>
-
-                    <div class="price-row">
-
-                        <span class="price">$85</span>
-
-                        <a href="#" class="shop-btn">
-                            View
-                        </a>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-            <div class="product-card">
-
-                <div class="product-image">
-
-                    <img src="{% static 'images/products/product2.jpg' %}" alt="Product">
-
-                </div>
-
-                <div class="product-info">
-
-                    <span class="category">
-                        Metal Art
-                    </span>
-
-                    <h3>Traditional Singing Bowl</h3>
-
-                    <div class="price-row">
-
-                        <span class="price">$70</span>
-
-                        <a href="#" class="shop-btn">
-                            View
-                        </a>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-            <div class="product-card">
-
-                <div class="product-image">
-
-                    <img src="{% static 'images/products/product3.jpg' %}" alt="Product">
-
-                </div>
-
-                <div class="product-info">
-
-                    <span class="category">
-                        Textile
-                    </span>
-
-                    <h3>Pashmina Shawl</h3>
-
-                    <div class="price-row">
-
-                        <span class="price">$60</span>
-
-                        <a href="#" class="shop-btn">
-                            View
-                        </a>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-            <div class="product-card">
-
-                <div class="product-image">
-
-                    <img src="{% static 'images/products/product4.jpg' %}" alt="Product">
-
-                </div>
-
-                <div class="product-info">
-
-                    <span class="category">
-                        Thangka
-                    </span>
-
-                    <h3>Hand Painted Thangka</h3>
-
-                    <div class="price-row">
-
-                        <span class="price">$120</span>
-
-                        <a href="#" class="shop-btn">
-                            View
-                        </a>
-
-                    </div>
-
-                </div>
-
-            </div>
-
+          {% endif %}
         </div>
 
-    </div>
+        <div class="product-info">
+          <span class="category"> {{ product.category }} </span>
 
+          <h3>{{ product.name }}</h3>
+
+          {% if product.description %}
+
+          <p class="product-description">
+            {{ product.description|truncatewords:15 }}
+          </p>
+
+          {% endif %}
+
+          <div class="price-row">
+            <span class="price"> ${{ product.price }} </span>
+
+            {% if product.stock %}
+
+            <a href="#" class="shop-btn"> View </a>
+
+            {% else %}
+
+            <span class="out-of-stock"> Out of Stock </span>
+
+            {% endif %}
+          </div>
+        </div>
+      </div>
+
+      {% empty %}
+
+      <div class="no-products">
+        <h3>No Products Available</h3>
+
+        <p>
+          Our artisans are currently preparing new handcrafted pieces for you.
+        </p>
+      </div>
+
+      {% endfor %}
+    </div>
+  </div>
 </section>
 
 {% endblock %}

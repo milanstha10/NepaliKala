@@ -15,45 +15,37 @@ NepalKala | Authentic Nepali Handicrafts
 
     <div class="hero-content">
 
-      <span class="hero-tag"> 
+      {% if hero %}
 
+      <span class="hero-tag">
         Timeless Nepali Craftsmanship
-
       </span>
 
       <h1>
-
-        Handcrafted Stories
-        <br>
-        From The Heart
-        <br>
-        Of Nepal
-
+        {{ hero.title }}
       </h1>
 
+      {% if hero.subtitle %}
       <p>
-
-        Every handcrafted piece carries generations of tradition,
-        artistry, and culture. NepalKala connects skilled Nepali
-        artisans with the world through authentic handmade creations.
-
+        {{ hero.subtitle }}
       </p>
+      {% endif %}
 
       <div class="hero-buttons">
 
-        <a href="/collection" class="primary-btn">
-
-          Explore Collection
-
+        {% if hero.button_text and hero.button_link %}
+        <a href="{{ hero.button_link }}" class="primary-btn">
+          {{ hero.button_text }}
         </a>
+        {% endif %}
 
-        <a href="/about" class="secondary-btn">
-
+        <a href="{% url 'about' %}" class="secondary-btn">
           Our Story
-
         </a>
 
       </div>
+
+      {% endif %}
 
       <div class="hero-stats">
 
@@ -61,7 +53,9 @@ NepalKala | Authentic Nepali Handicrafts
 
           <h3>500+</h3>
 
-          <span>Unique Products</span>
+          <span>
+            Unique Products
+          </span>
 
         </div>
 
@@ -69,7 +63,9 @@ NepalKala | Authentic Nepali Handicrafts
 
           <h3>120+</h3>
 
-          <span>Master Artisans</span>
+          <span>
+            Master Artisans
+          </span>
 
         </div>
 
@@ -77,7 +73,9 @@ NepalKala | Authentic Nepali Handicrafts
 
           <h3>25+</h3>
 
-          <span>Districts</span>
+          <span>
+            Districts
+          </span>
 
         </div>
 
@@ -85,14 +83,27 @@ NepalKala | Authentic Nepali Handicrafts
 
     </div>
 
+    {% if hero and hero.image %}
+
+    <div class="hero-image">
+
+      <div class="gold-glow"></div>
+
+      <img src="{{ hero.image.url }}" alt="{{ hero.title }}">
+
+    </div>
+
+    {% else %}
+
     <div class="hero-image">
 
       <div class="gold-glow"></div>
 
       <img src="{% static 'images/hero.png' %}" alt="Nepali Handicrafts">
 
-
     </div>
+
+    {% endif %}
 
   </div>
 
