@@ -1,46 +1,39 @@
-{% extends 'base.html' %}
-{% load static %}
-
-{% block title %}
-{{ product.name }} | NepalKala
-{% endblock %}
-
-{% block content %}
+{% extends 'base.html' %} {% load static %} {% block title %} {{ product.name }}
+| NepalKala {% endblock %} {% block content %}
 
 <div class="container">
-    <div class="product-detail">
-        <div class="product-detail-image">
-            {% if product.image %}
-            <img src="{{ product.image.url }}" alt="{{ product.name }}">
-            {% else %}
-            <img src="{% static 'images/products/product1.jpg' %}" alt="{{ product.name }}">
-            {% endif %}
-        </div>
-
-        <div class="product-detail-info">
-            <span>{{ product.category }}</span>
-
-            <h1>{{ product.name }}</h1>
-
-            <p>{{ product.description }}</p>
-
-            <h2>${{ product.price }}</h2>
-
-            {% if product.material %}
-            <p><strong>Material:</strong> {{ product.material }}</p>
-            {% endif %}
-
-            {% if product.size %}
-            <p><strong>Size:</strong> {{ product.size }}</p>
-            {% endif %}
-
-            {% if product.stock %}
-            <p>In Stock</p>
-            {% else %}
-            <p>Out of Stock</p>
-            {% endif %}
-        </div>
+  <div class="product-detail">
+    <div class="product-detail-image">
+      {% if product.image %}
+      <img src="{{ product.image.url }}" alt="{{ product.name }}" />
+      {% else %}
+      <img
+        src="{% static 'images/products/product1.jpg' %}"
+        alt="{{ product.name }}"
+      />
+      {% endif %}
     </div>
+
+    <div class="product-detail-info">
+      <span>{{ product.category }}</span>
+
+      <h1>{{ product.name }}</h1>
+
+      <p>{{ product.description }}</p>
+
+      <h2>${{ product.price }}</h2>
+
+      {% if product.material %}
+      <p><strong>Material:</strong> {{ product.material }}</p>
+      {% endif %} {% if product.size %}
+      <p><strong>Size:</strong> {{ product.size }}</p>
+      {% endif %} {% if product.stock %}
+      <p>In Stock</p>
+      {% else %}
+      <p>Out of Stock</p>
+      {% endif %}
+    </div>
+  </div>
 </div>
 
 {% endblock %}

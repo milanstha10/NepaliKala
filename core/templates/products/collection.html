@@ -1,153 +1,118 @@
-{% extends 'base.html' %}
-{% load static %}
-
-{% block title %}
-NepalKala | Collections
-{% endblock %}
-
-{% block content %}
+{% extends 'base.html' %} {% load static %} {% block title %} NepalKala |
+Collections {% endblock %} {% block content %}
 
 <section class="collection-hero">
+  <div class="collection-overlay"></div>
 
-    <div class="collection-overlay"></div>
+  <div class="container">
+    <div class="collection-heading">
+      <span class="collection-tag"> Explore Nepali Heritage </span>
 
-    <div class="container">
+      <h1>
+        Our
+        <br />
+        Collections
+      </h1>
 
-        <div class="collection-heading">
-
-            <span class="collection-tag">
-                Explore Nepali Heritage
-            </span>
-
-            <h1>
-                Our
-                <br>
-                Collections
-            </h1>
-
-            <p>
-                Discover handcrafted collections inspired by Nepal’s rich
-                culture, traditions, and generations of skilled artisans.
-            </p>
-
-        </div>
-
+      <p>
+        Discover handcrafted collections inspired by Nepal’s rich culture,
+        traditions, and generations of skilled artisans.
+      </p>
     </div>
-
+  </div>
 </section>
 
-
 <section class="collection-section">
+  <div class="container">
+    <div class="collection-grid">
+      <a href="#" class="collection-card">
+        <img
+          src="{% static 'images/collections/wood.jpg' %}"
+          alt="Wood Carving"
+        />
 
-    <div class="container">
+        <div class="collection-content">
+          <h2>Wood Carving</h2>
 
-        <div class="collection-grid">
+          <p>Traditional hand carved masterpieces.</p>
 
-            <a href="#" class="collection-card">
-
-                <img src="{% static 'images/collections/wood.jpg' %}" alt="Wood Carving">
-
-                <div class="collection-content">
-
-                    <h2>Wood Carving</h2>
-
-                    <p>Traditional hand carved masterpieces.</p>
-
-                    <span>Explore →</span>
-
-                </div>
-
-            </a>
-
-
-            <a href="#" class="collection-card">
-
-                <img src="{% static 'images/collections/thangka.jpg' %}" alt="Thangka">
-
-                <div class="collection-content">
-
-                    <h2>Thangka Art</h2>
-
-                    <p>Sacred paintings made by master artists.</p>
-
-                    <span>Explore →</span>
-
-                </div>
-
-            </a>
-
-
-            <a href="#" class="collection-card">
-
-                <img src="{% static 'images/collections/jewelry.jpg' %}" alt="Jewelry">
-
-                <div class="collection-content">
-
-                    <h2>Jewelry</h2>
-
-                    <p>Authentic handmade silver & gemstone jewelry.</p>
-
-                    <span>Explore →</span>
-
-                </div>
-
-            </a>
-
-
-            <a href="#" class="collection-card">
-
-                <img src="{% static 'images/collections/textile.jpg' %}" alt="Textile">
-
-                <div class="collection-content">
-
-                    <h2>Textiles</h2>
-
-                    <p>Handwoven pashmina and traditional fabrics.</p>
-
-                    <span>Explore →</span>
-
-                </div>
-
-            </a>
-
-
-            <a href="#" class="collection-card">
-
-                <img src="{% static 'images/collections/singingbowl.jpg' %}" alt="Singing Bowl">
-
-                <div class="collection-content">
-
-                    <h2>Singing Bowls</h2>
-
-                    <p>Healing sounds handcrafted in Nepal.</p>
-
-                    <span>Explore →</span>
-
-                </div>
-
-            </a>
-
-
-            <a href="#" class="collection-card">
-
-                <img src="{% static 'images/collections/statue.jpg' %}" alt="Statues">
-
-                <div class="collection-content">
-
-                    <h2>Statues</h2>
-
-                    <p>Bronze and brass sculptures crafted by artisans.</p>
-
-                    <span>Explore →</span>
-
-                </div>
-
-            </a>
-
+          <span>Explore →</span>
         </div>
+      </a>
 
+      <a href="#" class="collection-card">
+        <img
+          src="{% static 'images/collections/thangka.jpg' %}"
+          alt="Thangka"
+        />
+
+        <div class="collection-content">
+          <h2>Thangka Art</h2>
+
+          <p>Sacred paintings made by master artists.</p>
+
+          <span>Explore →</span>
+        </div>
+      </a>
+
+      <a href="#" class="collection-card">
+        <img
+          src="{% static 'images/collections/jewelry.jpg' %}"
+          alt="Jewelry"
+        />
+
+        <div class="collection-content">
+          <h2>Jewelry</h2>
+
+          <p>Authentic handmade silver & gemstone jewelry.</p>
+
+          <span>Explore →</span>
+        </div>
+      </a>
+
+      <a href="#" class="collection-card">
+        <img
+          src="{% static 'images/collections/textile.jpg' %}"
+          alt="Textile"
+        />
+
+        <div class="collection-content">
+          <h2>Textiles</h2>
+
+          <p>Handwoven pashmina and traditional fabrics.</p>
+
+          <span>Explore →</span>
+        </div>
+      </a>
+
+      <a href="#" class="collection-card">
+        <img
+          src="{% static 'images/collections/singingbowl.jpg' %}"
+          alt="Singing Bowl"
+        />
+
+        <div class="collection-content">
+          <h2>Singing Bowls</h2>
+
+          <p>Healing sounds handcrafted in Nepal.</p>
+
+          <span>Explore →</span>
+        </div>
+      </a>
+
+      <a href="#" class="collection-card">
+        <img src="{% static 'images/collections/statue.jpg' %}" alt="Statues" />
+
+        <div class="collection-content">
+          <h2>Statues</h2>
+
+          <p>Bronze and brass sculptures crafted by artisans.</p>
+
+          <span>Explore →</span>
+        </div>
+      </a>
     </div>
-
+  </div>
 </section>
 
 {% endblock %}

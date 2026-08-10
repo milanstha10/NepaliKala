@@ -233,7 +233,6 @@
 }
 
 @media (max-width: 768px) {
-<<<<<<< HEAD
   .shop-hero {
     padding: 130px 0 80px;
   }
@@ -328,17 +327,15 @@
     padding: 10px 20px;
     font-size: 14px;
   }
-=======
-    .shop-heading h1 {
-        font-size: 42px;
-    }
+  .shop-heading h1 {
+    font-size: 42px;
+  }
 
-    .shop-heading p {
-        font-size: 16px;
-    }
+  .shop-heading p {
+    font-size: 16px;
+  }
 
-    .product-grid {
-        grid-template-columns: 1fr;
-    }
->>>>>>> fd495b8421e979208006ebb7ad4436cca5f993fc
+  .product-grid {
+    grid-template-columns: 1fr;
+  }
 }
